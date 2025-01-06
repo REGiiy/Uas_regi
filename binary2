@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+// Fungsi untuk melakukan Binary Search
+int binarySearch(int arr[], int n, int target) {
+    int left = 0, right = n - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2; // Menghindari overflow
+
+        // Periksa apakah elemen ditemukan
+        if (arr[mid] == target) {
+            return mid;
+        }
+
+        // Jika elemen lebih kecil, cari di bagian kiri
+        if (arr[mid] > target) {
+            right = mid - 1;
+        }
+        // Jika elemen lebih besar, cari di bagian kanan
+        else {
+            left = mid + 1;
+        }
+    }
+
+    return -1; // Elemen tidak ditemukan
+}
+
+int main() {
+	    cout<<" |   NAMA:MUHAMMAD REGI SYAPUTRA       |"<<endl;
+ 	    cout<<" |   NIM:23101140173                   |"<<endl;
+    int arr[] = {10, 20, 30, 40, 50};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target;
+
+    cout << "Masukkan elemen yang ingin dicari: ";
+    cin >> target;
+
+    int result = binarySearch(arr, n, target);
+
+    if (result != -1) {
+        cout << "Elemen ditemukan di indeks " << result << endl;
+    } else {
+        cout << "Elemen tidak ditemukan" << endl;
+    }
+
+    return 0;
+}
