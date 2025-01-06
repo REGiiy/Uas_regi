@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+// Fungsi untuk melakukan Linear Search
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            return i; // Mengembalikan indeks elemen yang ditemukan
+        }
+    }
+    return -1; // Elemen tidak ditemukan
+}
+
+int main() {
+	    cout<<" |   NAMA:MUHAMMAD REGI SYAPUTRA       |"<<endl;
+ 	    cout<<" |   NIM:23101140173                   |"<<endl;
+    int arr[] = {10, 20, 30, 40, 50};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target;
+
+    cout << "Masukkan elemen yang ingin dicari: ";
+    cin >> target;
+
+    int result = linearSearch(arr, n, target);
+
+    if (result != -1) {
+        cout << "Elemen ditemukan di indeks " << result << endl;
+    } else {
+        cout << "Elemen tidak ditemukan" << endl;
+    }
+
+    return 0;
+}
